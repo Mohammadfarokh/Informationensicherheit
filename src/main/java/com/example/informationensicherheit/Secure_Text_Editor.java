@@ -49,7 +49,6 @@ public class Secure_Text_Editor extends Application {
     private void newDocument() {
         textArea.clear();
         currentFile = null;
-        //this is just a test
     }
 
     private void openDocument() {
