@@ -6,6 +6,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
+import java.security.Security;
+
 
 public class HelloApplication extends Application {
     @Override
@@ -17,7 +20,10 @@ public class HelloApplication extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchAlgorithmException {
+        Security.setProperty("crypto.policy", "unlimited");
+        int maxKeySize = javax.crypto.Cipher.getMaxAllowedKeyLength("AES");
+        System.out.println("Max Key Size for AES : " + maxKeySize);
         launch();
     }
 }

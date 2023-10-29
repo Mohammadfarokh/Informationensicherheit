@@ -4,6 +4,7 @@ module com.example.informationensicherheit {
 
     requires org.controlsfx.controls;
     requires org.kordamp.bootstrapfx.core;
+    requires org.bouncycastle.provider;
 
     opens com.example.informationensicherheit to javafx.fxml;
     exports com.example.informationensicherheit;
